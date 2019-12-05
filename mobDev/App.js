@@ -10,14 +10,9 @@ import React, { Fragment } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  Button,
   StatusBar,
 } from 'react-native';
-import SignIn from './src/screens/SignIn';
-import AppNavigator from './navigation/AppNavigator';
+import AppNavigator from './src/navigation/AppNavigator';
 
 export default function App() {
 
@@ -37,3 +32,4 @@ const styles = StyleSheet.create({
     height: "100%",
   },
 });
+

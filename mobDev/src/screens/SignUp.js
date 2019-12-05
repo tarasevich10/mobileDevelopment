@@ -5,19 +5,19 @@ import {
   Text
 } from "react-native";
 
-import firebase from '../../config/firebaseConfig';
+import firebase from "../../config/firebaseConfig";
 import InputText from "../components/InputText";
 import Button from "../components/Button";
-import { useNavigation } from 'react-navigation-hooks';
+import { useNavigation } from "react-navigation-hooks";
 
 import { MAIN_THEME } from "../constants/colors";
-import { SIGN_IN, MAIN_PAGE } from '../constants/routes';
+import { SIGN_IN, MAIN_PAGE } from "../constants/routes";
 
 import {
   isPhoneNumber,
   isPassword,
   isEmail
-} from '../../utils/validators';
+} from "../utils/validators";
 
 export default function SignUp() {
   const [username, setUsername] = useState(null);
@@ -60,7 +60,7 @@ export default function SignUp() {
 
     setErrors(formValidation());
 
-    if (Object.keys(errors).length !== 0) {
+    if (Object.values(errors).length !== 0) {
       return;
     }
 
