@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { WHITE } from '../constants/colors';
+import { WHITE, BUTTON_COLOR } from '../constants/colors';
 
 const Button = ({
   label,
@@ -16,12 +16,12 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: 'rgba(66, 138,248,1)',
+    backgroundColor: `${BUTTON_COLOR}`,
     marginBottom: 12,
     paddingVertical: 12,
     borderRadius: 4,
     borderWidth: StyleSheet.hairlineWidth,
-    borderColor: "rgba(255,255,255,0.7)"
+    borderColor : "white"
   },
   text: {
     color: `${WHITE}`,

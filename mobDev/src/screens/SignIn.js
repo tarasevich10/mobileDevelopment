@@ -6,7 +6,6 @@ import {
 } from "react-native";
 import firebase from '../../config/firebaseConfig';
 import {useNavigation} from 'react-navigation-hooks';
-
 import InputText from "../components/InputText";
 import Button from "../components/Button";
 
@@ -16,7 +15,7 @@ import {SIGN_UP, MAIN_PAGE} from '../constants/routes';
 import {
   isPassword,
   isEmail
-} from '../../utils/validators';
+} from '../utils/validators';
 
 export default function SignIn() {
   const [email, setEmail] = useState(null);
@@ -31,7 +30,7 @@ export default function SignIn() {
     if (!email) {
       errors.email = "Email is required.";
     } else if (!isEmail(email)) {
-      errors.email = "Email you try is incorrect.";
+      errors.email = "Email you try is incorrect type of email.";
     }
 
     if (!password) {
@@ -46,7 +45,7 @@ export default function SignIn() {
 
     setErrors(loginValidation());
 
-    if (Object.keys(errors).length !== 0) {
+    if (Object.values(errors).length !== 0) {
       return;
     }
 
