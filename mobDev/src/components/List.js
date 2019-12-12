@@ -14,7 +14,8 @@ import { MAIN_THEME } from '../constants/colors';
 
 
 const List = ({
-  item
+  item,
+  openDetails
 }) => {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const { browserRequirements, publisher, userRegistration, startDate, gameStatus: imageUrl } = item;
@@ -43,7 +44,7 @@ const List = ({
 
   return (
     <View>
-      <Card style={styles.cardContainer}>
+      <Card style={styles.cardContainer} onPress={() => openDetails(item)}>
         <Card.Content style={styles.content}>
           <Card.Cover source={imageUrl ? { uri: imageUrl } : null} />
           <View style={styles.textContent}>
