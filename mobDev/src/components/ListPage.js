@@ -11,7 +11,7 @@ import List from "../components/List";
 import { DATA_URL } from "../constants/routes";
 import { ACTIVITY_INDICATOR } from "../constants/colors";
 
-export default function ListPage() {
+export default function ListPage({ openDetails }) {
   const [isLoading, setIsLoading] = useState(false);
   const [isNetworkAvailable, setIsNetworkAvailable] = useState(true);
   const [data, setData] = useState([]);
@@ -19,7 +19,7 @@ export default function ListPage() {
   const [snackbarDialog, setSnackbarDialog] = useState(null);
 
   const renderList = ({ item }) => (
-    <List item={item} />
+    <List item={item} openDetails={openDetails} />
   );
 
   const generateKeyExtractor = item => item.id + "";
